@@ -9,28 +9,41 @@
 // * [ ] `scroll`
 // * [ ] `select`
 // * [ ] `dblclick`
-// const catImage = document.querySelector('.card-img-top');
-// // console.log(catImage);
 
 // zoom busimage
-const busImage = document.querySelector('img');
-busImage.addEventListener('mouseenter', () => {
-    busImage.style.transform = "scale(1.1)";
-    busImage.style.transition = "transform 1s";
-});
-busImage.addEventListener('mouseleave', () => {
-    busImage.style.transform = 'scale(1)';
-});
+const imgs = document.querySelectorAll('img');
+console.log(imgs)
+for (const img of imgs) {
+    img.addEventListener('mouseenter', () => {
+        img.style.transform = "scale(1.1)";
+        img.style.transition = "transform 1s";
+    });
+    img.addEventListener('mouseleave', () => {
+        img.style.transform = 'scale(1)';
+    });
+}
+
 
 
 //click body changes text color
-const click = document.querySelector('body');
-click.addEventListener('click', () => {
-    if(click.style.color === 'green'){
-        click.style.color = 'black';
-    } 
-    else { click.style.color = 'green'
-    }
+const colors = document.querySelectorAll('p, h2');
+console.log(colors);
+for (const color of colors) {
+    color.addEventListener('click', () => {
+        if (color.style.color === 'green') {
+            color.style.color = 'black';
+        }
+        else {
+            color.style.color = 'green';
+        }
+    });
+}
 
-});
+//dblclick for black and white image
+for (const img of imgs) {
+    img.addEventListener('dblclick', () => {
+        img.style.filter = 'grayscale(100%)';
+    });
+}
+
 
